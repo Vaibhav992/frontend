@@ -12,7 +12,11 @@ In Vercel Dashboard, go to your project settings and add:
 VITE_API_URL=https://your-backend-url.com/api
 ```
 
-**Important:** Replace `https://your-backend-url.com/api` with your actual backend API URL.
+**Important:** 
+- Replace `https://your-backend-url.com/api` with your actual backend API URL
+- **CRITICAL:** The URL MUST end with `/api` because the backend routes are prefixed with `/api`
+- Example: `https://backend-9leq.onrender.com/api` ✅
+- Wrong: `https://backend-9leq.onrender.com` ❌ (will cause 404 errors)
 
 ### 3. Build Settings
 Vercel will automatically detect Vite projects. Ensure:
@@ -41,4 +45,5 @@ Vercel will automatically detect Vite projects. Ensure:
 ### Build Errors
 - Ensure all dependencies are in `package.json`
 - Check that Node.js version is compatible (Vercel uses Node 18+ by default)
+
 
